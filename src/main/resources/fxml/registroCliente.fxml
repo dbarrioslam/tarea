@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="312.0" prefWidth="531.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="fxml.RegistroClienteController">
+   <children>
+      <Pane layoutX="28.0" layoutY="14.0" prefHeight="312.0" prefWidth="531.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Group layoutX="39.0" layoutY="14.0">
+               <children>
+                  <Label layoutX="54.0" layoutY="54.0" text="Nombre" />
+                  <TextField fx:id="tfNombreCliente" layoutX="263.0" layoutY="50.0" />
+               </children>
+            </Group>
+            <Group layoutX="39.0" layoutY="14.0">
+               <children>
+                  <Label layoutX="54.0" layoutY="89.0" text="Apellido Paterno" />
+                  <TextField fx:id="tfApePatCliente" layoutX="263.0" layoutY="85.0" />
+               </children>
+            </Group>
+            <Group layoutX="39.0" layoutY="14.0">
+               <children>
+                  <Label layoutX="54.0" layoutY="156.0" text="Fecha de Nacimiento" />
+                  <TextField fx:id="tfFecNacCliente" layoutX="263.0" layoutY="152.0" />
+               </children>
+            </Group>
+            <Group layoutX="39.0" layoutY="14.0">
+               <children>
+                  <TextField fx:id="tfApeMatCliente" layoutX="263.0" layoutY="118.0" />
+                  <Label layoutX="54.0" layoutY="122.0" text="Apellido Materno" />
+               </children>
+            </Group>
+            <Group>
+               <children>
+                  <Button fx:id="btnCancelarCliente" layoutX="324.0" layoutY="233.0" mnemonicParsing="false" onAction="#cancelarCliente" text="Cancelar" />
+                  <Button fx:id="btnGuardarCliente" layoutX="147.0" layoutY="233.0" mnemonicParsing="false" onAction="#guardarCliente" text="Guardar" />
+               </children>
+            </Group>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
