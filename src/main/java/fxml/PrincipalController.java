@@ -5,6 +5,7 @@
  */
 package fxml;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,7 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,9 +35,14 @@ public class PrincipalController implements Initializable {
     }    
 
     @FXML
-    private void verRegistroCliente(ActionEvent event) {
+    private void verRegistroCliente(ActionEvent event) throws IOException {
         
-        System.out.println("hola");
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/registroCliente.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.setTitle("JavaFX and Maven12");
+        stage.show();
     }
     
 }
