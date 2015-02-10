@@ -34,7 +34,7 @@ public class PrincipalController implements Initializable {
     @FXML
     private void verRegistroCliente(ActionEvent event) {
         
-        
+        System.out.println("hola");
     }
     
 }
