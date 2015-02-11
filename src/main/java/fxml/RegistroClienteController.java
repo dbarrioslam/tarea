@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 /**
  * FXML Controller class
@@ -22,6 +24,7 @@ import javafx.scene.control.TextField;
  * @author daniel.barrios
  */
 public class RegistroClienteController implements Initializable {
+
     @FXML
     private TextField tfNombreCliente;
     @FXML
@@ -39,27 +42,31 @@ public class RegistroClienteController implements Initializable {
     String apePatCliente;
     String apeMatCliente;
     LocalDate fecNacCliente;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void cancelarCliente(ActionEvent event) {
+        Stage stage = (Stage) btnCancelarCliente.getScene().getWindow();
+        // do what you have to do
+        stage.close();
     }
 
     @FXML
     private void guardarCliente(ActionEvent event) {
-        
+
         nomCliente = tfNombreCliente.getText();
         apePatCliente = tfApePatCliente.getText();
         apeMatCliente = tfApeMatCliente.getText();
-       
+
         fecNacCliente = tfFecNacCliente.getValue();
-        System.out.println("la feccha es "+fecNacCliente);
+        System.out.println("la feccha es " + fecNacCliente);
     }
-    
+
 }
