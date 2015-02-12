@@ -13,7 +13,7 @@
           <Menu mnemonicParsing="false" text="Registros">
             <items>
               <MenuItem fx:id="rusuario" mnemonicParsing="false" onAction="#verRegistroCliente" text="Registrar usuario" />
-                  <MenuItem mnemonicParsing="false" text="Registrar Combo" />
+                  <MenuItem mnemonicParsing="false" onAction="#verModificarusuario" text="Modificar usuario" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Usuarios" />

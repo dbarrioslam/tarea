@@ -44,5 +44,17 @@ public class PrincipalController implements Initializable {
         stage.setTitle("JavaFX and Maven12");
         stage.show();
     }
+
+    @FXML
+    private void verModificarusuario(ActionEvent event) throws IOException {
+        
+        Parent parent = FXMLLoader.load(getClass().getResource("/fxml/actualizacionCliente.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.setTitle("JavaFX and Maven12");
+        stage.show();
+        
+    }
     
 }

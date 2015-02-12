@@ -6,8 +6,10 @@
 package clases;
 
 import fxml.conexion11;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Persona {
 
     LocalDate fecNacPersona;
     conexion11 cone;
+    ResultSet rs;
 
     public Persona(String nombrePersona, String apePatPersona, String apeMatPersona, LocalDate fecNacPersona, String dniCliente) {
         this.nombrePersona = nombrePersona;
@@ -30,6 +33,10 @@ public class Persona {
         this.fecNacPersona = fecNacPersona;
         this.dniPersona = dniCliente;
 
+    }
+    
+    public Persona(){
+        
     }
 
     public String getNombrePersona() {
@@ -94,15 +101,55 @@ public class Persona {
         }
     }
 
-    public void modificarCliente(String nombrePersona, String apePatPersona, String apeMatPersona, LocalDate fecNacPersona, String dniPersona) {
+    public void modificarCliente(String nombrePersona, String apePatPersona, String apeMatPersona, LocalDate fecNacPersona, String dniPersona, String dniAntiguoPersona) {
 
         try {
             cone = new conexion11();
-            cone.ejecutar("update cliente set nombre='',apellidoPaterno='',apellidoMaterno='',fechaNacimiento='',DNI='' where DNI='' ");
+            cone.ejecutar("update cliente set nombreCliente='"+nombrePersona+"',apellidoPaterno='"+apePatPersona+"',apellidoMaterno='"+apeMatPersona+"',fechaNacimiento='"+fecNacPersona+"',DNI='"+dniPersona+"' where DNI='"+dniAntiguoPersona+"' ");
 
         } catch (Exception e) {
 
         }
     }
+
+    public boolean buscarCliente(String DNICliente) {
+        
+        boolean hayCliente = false;
+        try {
+            cone = new conexion11();
+            rs = cone.consulta("select * from cliente where DNI='"+DNICliente+"' ");
+            
+            
+            hayCliente = rs.next();
+            
+                       
+            
+            
+        } catch (Exception e) {
+            
+        }
+        return hayCliente;
+    }
+    
+    public ResultSet obtenerCliente(String DNICliente){
+        
+        try {
+            cone = new conexion11();
+            rs = cone.consulta("select * from cliente where DNI='"+DNICliente+"' ");
+                   
+            rs.next();
+            
+                       
+            
+            
+        } catch (Exception e) {
+            
+        }
+        
+        return rs;
+        
+    }
+    
+    
 
 }
